@@ -1,8 +1,8 @@
 {
-  "name": "http_post",
+  "name": "purchaseapp",
   "version": "1.0.0",
-  "description": "http_post Project",
-  "author": "Abdujalil",
+  "description": "First Angular 13 Project",
+  "author": "Eugene Popov metanit.com",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

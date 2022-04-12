@@ -1,7 +1,7 @@
 {
   "version": 1,
   "projects": {
-    "http_post": {
+    "purchaseapp": {
       "projectType": "application",
       "root": "",
       "sourceRoot": "src",
@@ -9,22 +9,21 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/http_post",
+            "outputPath": "dist/purchaseapp",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.json",             
-            "assets": ["src/assets"],             
+            "tsConfig": "tsconfig.json",
             "aot": true
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "http_post:build"
+            "browserTarget": "purchaseapp:build"
           }
         }
       }
     }},
-  "defaultProject": "http_post"
+  "defaultProject": "purchaseapp"
 }
