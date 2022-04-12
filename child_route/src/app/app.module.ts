@@ -1,31 +1,31 @@
 import { NgModule }      from '@angular/core';
-import { FormsModule }      from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
- 
 import {Routes, RouterModule} from '@angular/router';
- 
 import { AppComponent }   from './app.component';
-import { AboutComponent }   from './about.component';
 import { HomeComponent }   from './home.component';
-import { NotFoundComponent }   from './not-found.component';
- 
  
 import { ItemComponent }   from './item.component';
+import { ItemStatComponent }   from './item.stat.component';
+import { ItemDetailsComponent }   from './item.details.component';
  
-// определение маршрутов
+// определение дочерних маршрутов
+const itemRoutes: Routes = [
+    { path: 'details', component: ItemDetailsComponent},
+    { path: 'stat', component: ItemStatComponent},
+];
+ 
 const appRoutes: Routes =[
-    { path: '', component: HomeComponent},
-    { path: 'about', component: AboutComponent},
+ 
     { path: 'item/:id', component: ItemComponent},
-    { path: '**', component: NotFoundComponent }
+    { path: 'item/:id', component: ItemComponent, children: itemRoutes},
+    { path: '', component: HomeComponent}
 ];
  
 @NgModule({
-    imports:      [ BrowserModule, FormsModule, RouterModule.forRoot(appRoutes)],
+    imports:      [ BrowserModule, RouterModule.forRoot(appRoutes)],
     declarations: [ 
-                    AppComponent, HomeComponent, 
-                    AboutComponent, NotFoundComponent, 
-                    ItemComponent
+                    AppComponent, HomeComponent, ItemComponent,
+                    ItemDetailsComponent, ItemStatComponent
                 ],
     bootstrap:    [ AppComponent ]
 })
