@@ -19,5 +19,21 @@ app.get("/sum", function(request, response){
      
     response.send({result: sum});
 });
+
+// обработчик по маршруту localhost:3000/postuser
+app.post("/postuser", jsonParser, function (request, response) {
+ 
+    // если не переданы данные, возвращаем ошибку
+    if(!request.body) return response.sendStatus(400);
+     
+    // получаем данные
+    let username = request.body.name;
+    let userage = request.body.age;
+    // имитируем некоторую обработку данных, например, изменим значение userage
+    userage = userage + 10;
+     
+    // отправка данных обратно клиенту
+    response.json({"name": username, "age": userage});
+});
   
 app.listen(3000);
