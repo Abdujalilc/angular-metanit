@@ -1,27 +1,33 @@
-# AngularMetanit
+ng serve --project="01_purchase-app"
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.1.
+ng serve --project="02_http-client"
 
-## Development server
+ng serve --project="03_http-client-complex"
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+ng serve --project="04_observable"
 
-## Code scaffolding
+----------------------------------
+//07_node-test-api for express.js
+npm i
+src/app>node app.js
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+ng serve --project="05_http-client-send"
 
-## Build
+ng serve --project="06_http-client-post"
+----------------------------------
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+ng serve --project="08_child-route"
 
-## Running unit tests
+ng serve --project="09_route-guard"
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+ng serve --project="10_router-app"
 
-## Running end-to-end tests
+----------------------------------
+//12_node-crud-mongo for express.js
+install mongo
+npm i
+src/app>node app.js
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+ng serve --project="11_gridapp"
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
