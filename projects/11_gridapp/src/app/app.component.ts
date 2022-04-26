@@ -9,7 +9,7 @@ import {UserService} from './user.service';
     providers: [UserService]
 }) 
 export class AppComponent implements OnInit {
-    //типы шаблонов
+    //types of templates
     @ViewChild('readOnlyTemplate', {static: false}) readOnlyTemplate: TemplateRef<any>|undefined;
     @ViewChild('editTemplate', {static: false}) editTemplate: TemplateRef<any>|undefined;
         
@@ -26,24 +26,24 @@ export class AppComponent implements OnInit {
         this.loadUsers();
     }
         
-    //загрузка пользователей
+    //load users
     private loadUsers() {
         this.serv.getUsers().subscribe((data: Array<User>) => {
                 this.users = data; 
             });
     }
-    // добавление пользователя
+    // add user
     addUser() {
         this.editedUser = new User(1,"",0);
         this.users.push(this.editedUser);
         this.isNewRecord = true;
     }
      
-    // редактирование пользователя
+    // edit user
     editUser(user: User) {
         this.editedUser = new User(user._id, user.name, user.age);
     }
-    // загружаем один из двух шаблонов
+    // load one og the two templates
     loadTemplate(user: User) {
         if (this.editedUser && this.editedUser._id === user._id) {
             return this.editTemplate;
@@ -51,10 +51,10 @@ export class AppComponent implements OnInit {
             return this.readOnlyTemplate;
         }
     }
-    // сохраняем пользователя
+    // save user
     saveUser() {
         if (this.isNewRecord) {
-            // добавляем пользователя
+            // add user
             this.serv.createUser(this.editedUser as User).subscribe(data => {
                 this.statusMessage = 'Данные успешно добавлены',
                 this.loadUsers();
@@ -62,7 +62,7 @@ export class AppComponent implements OnInit {
             this.isNewRecord = false;
             this.editedUser = null;
         } else {
-            // изменяем пользователя
+            // change user
             this.serv.updateUser(this.editedUser as User).subscribe(data => {
                 this.statusMessage = 'Данные успешно обновлены',
                 this.loadUsers();
@@ -70,7 +70,7 @@ export class AppComponent implements OnInit {
             this.editedUser = null;
         }
     }
-    // отмена редактирования
+    // cancel editing
     cancel() {
         // если отмена при добавлении, удаляем последнюю запись
         if (this.isNewRecord) {
