@@ -1,5 +1,5 @@
-<h1>Список пользователей</h1>
-<input type="button" value="Добавить" class="btn btn-default" (click)="addUser()" />
+<h1>List of Users</h1>
+<input type="button" value="Add new user" class="btn btn-default" (click)="addUser()" />
 <table class="table table-striped">
     <thead>
         <tr>
@@ -27,10 +27,10 @@
     <td>{{user.name}}</td>
     <td>{{user.age}}</td>
     <td>
-        <input type="button" value="Изменить" class="btn btn-default" (click)="editUser(user)" />
+        <input type="button" value="Change" class="btn btn-default" (click)="editUser(user)" />
     </td>
     <td>
-        <input type="button" value="Удалить" (click)="deleteUser(user)" class="btn btn-danger" />
+        <input type="button" value="Delete" (click)="deleteUser(user)" class="btn btn-danger" />
     </td>
 </ng-template>
    
@@ -46,9 +46,9 @@
         <input type="number" [(ngModel)]="editedUser.age" class="form-control" />
     </td>
     <td>
-        <input type="button" value="Сохранить" (click)="saveUser()" class="btn btn-success" />
+        <input type="button" value="Save" (click)="saveUser()" class="btn btn-success" />
     </td>
     <td>
-        <input type="button" value="Отмена" (click)="cancel()" class="btn btn-warning" />
+        <input type="button" value="Cancel" (click)="cancel()" class="btn btn-warning" />
     </td>
 </ng-template>

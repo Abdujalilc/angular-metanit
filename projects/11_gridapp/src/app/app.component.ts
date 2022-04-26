@@ -32,18 +32,17 @@ export class AppComponent implements OnInit {
                 this.users = data; 
             });
     }
-    // add user
+    
     addUser() {
         this.editedUser = new User(1,"",0);
         this.users.push(this.editedUser);
         this.isNewRecord = true;
     }
-     
-    // edit user
+    
     editUser(user: User) {
         this.editedUser = new User(user._id, user.name, user.age);
     }
-    // load one og the two templates
+    // load one of the two templates
     loadTemplate(user: User) {
         if (this.editedUser && this.editedUser._id === user._id) {
             return this.editTemplate;
@@ -51,20 +50,18 @@ export class AppComponent implements OnInit {
             return this.readOnlyTemplate;
         }
     }
-    // save user
+    
     saveUser() {
-        if (this.isNewRecord) {
-            // add user
+        if (this.isNewRecord) {            
             this.serv.createUser(this.editedUser as User).subscribe(data => {
-                this.statusMessage = 'Данные успешно добавлены',
+                this.statusMessage = 'User added successfully',
                 this.loadUsers();
             });
             this.isNewRecord = false;
             this.editedUser = null;
         } else {
-            // change user
             this.serv.updateUser(this.editedUser as User).subscribe(data => {
-                this.statusMessage = 'Данные успешно обновлены',
+                this.statusMessage = 'Updated successfully',
                 this.loadUsers();
             });
             this.editedUser = null;
@@ -72,17 +69,17 @@ export class AppComponent implements OnInit {
     }
     // cancel editing
     cancel() {
-        // если отмена при добавлении, удаляем последнюю запись
+        // delete last record if adding cancelled
         if (this.isNewRecord) {
             this.users.pop();
             this.isNewRecord = false;
         }
         this.editedUser = null;
     }
-    // удаление пользователя
+    
     deleteUser(user: User) {
         this.serv.deleteUser(user._id.toString()).subscribe(data => {
-            this.statusMessage = 'Данные успешно удалены',
+            this.statusMessage = 'User deleted successfully',
             this.loadUsers();
         });
     }
