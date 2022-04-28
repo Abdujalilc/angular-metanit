@@ -12,15 +12,14 @@
     </thead>
     <tbody>
         <tr *ngFor="let user of users">
-            <ng-template [ngTemplateOutlet]="loadTemplate(user)" 
-                        [ngTemplateOutletContext]="{ $implicit: user}">
+            <ng-template [ngTemplateOutlet]="loadTemplate(user)" [ngTemplateOutletContext]="{ $implicit: user}">
             </ng-template>
         </tr>
     </tbody>
 </table>
 <div>{{statusMessage}}</div>
-    
-    
+
+
 <!--template for reading-->
 <ng-template #readOnlyTemplate let-user>
     <td>{{user._id}}</td>
@@ -33,7 +32,7 @@
         <input type="button" value="Delete" (click)="deleteUser(user)" class="btn btn-danger" />
     </td>
 </ng-template>
-   
+
 <!--template for editing-->
 <ng-template #editTemplate>
     <td>

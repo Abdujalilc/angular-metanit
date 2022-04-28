@@ -57,13 +57,15 @@ export class AppComponent implements OnInit {
   saveUser() {
     if (this.isNewRecord) {
       this.serv.createUser(this.editedUser as User).subscribe((data) => {
-        (this.statusMessage = 'User added successfully'), this.loadUsers();
+        (this.statusMessage = 'User added successfully'),
+          this.loadUsers();
       });
       this.isNewRecord = false;
       this.editedUser = null;
     } else {
       this.serv.updateUser(this.editedUser as User).subscribe((data) => {
-        (this.statusMessage = 'Updated successfully'), this.loadUsers();
+        (this.statusMessage = 'Updated successfully'),
+          this.loadUsers();
       });
       this.editedUser = null;
     }
@@ -80,7 +82,8 @@ export class AppComponent implements OnInit {
 
   deleteUser(user: User) {
     this.serv.deleteUser(user._id.toString()).subscribe((data) => {
-      (this.statusMessage = 'User deleted successfully'), this.loadUsers();
+      (this.statusMessage = 'User deleted successfully'),
+        this.loadUsers();
     });
   }
 }
