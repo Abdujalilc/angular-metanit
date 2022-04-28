@@ -8,15 +8,13 @@ import { ItemComponent }   from './item.component';
 import { ItemStatComponent }   from './item.stat.component';
 import { ItemDetailsComponent }   from './item.details.component';
  
-// определение дочерних маршрутов
+// defining child routes
 const itemRoutes: Routes = [
     { path: 'details', component: ItemDetailsComponent},
     { path: 'stat', component: ItemStatComponent},
 ];
  
 const appRoutes: Routes =[
- 
-    { path: 'item/:id', component: ItemComponent},
     { path: 'item/:id', component: ItemComponent, children: itemRoutes},
     { path: '', component: HomeComponent}
 ];

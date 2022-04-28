@@ -16,10 +16,4 @@ export class HttpService{
         .set('num2', num2.toString());
         return this.http.get('http://localhost:3000/sum', {params});
     }
-    postData(user: User){
-          
-        const body = {name: user.name, age: user.age};
-        return this.http.post('http://localhost:3000/postuser', body); 
-    }
-
 }

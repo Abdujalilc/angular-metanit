@@ -1,11 +1,11 @@
-import { Component} from '@angular/core';
-import { Router} from '@angular/router';
-  
-export class Item{
-     
-    constructor(public id: number, public product: string, public price: number){}
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+
+export class Item {
+
+    constructor(public id: number, public product: string, public price: number) { }
 }
-  
+
 @Component({
     selector: 'my-app',
     template: `<div>
@@ -24,18 +24,18 @@ export class Item{
                </div>`
 })
 export class AppComponent {
-     
+
     item: Item = new Item(1, "", 0);
-     
-    constructor(private router: Router){}
-     
-    goToItem(myItem: Item){
-             
+
+    constructor(private router: Router) { }
+
+    goToItem(myItem: Item) {
+
         this.router.navigate(
-            ['/item', myItem.id], 
+            ['/item', myItem.id],
             {
-                queryParams:{
-                    'product': myItem.product, 
+                queryParams: {
+                    'product': myItem.product,
                     'price': myItem.price
                 }
             }
