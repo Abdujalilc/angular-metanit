@@ -4,7 +4,7 @@ import {Subscription} from 'rxjs';
   
 @Component({
     selector: 'item-info',
-    template: `<h2>Товар {{id}}</h2>
+    template: `<h2>Production {{id}}</h2>
                <router-outlet></router-outlet>`
 })
 export class ItemComponent{ 

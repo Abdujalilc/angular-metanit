@@ -10,15 +10,15 @@ export class Item {
     selector: 'my-app',
     template: `<div>
                     <nav>
-                        <a routerLink="">Главная</a>
-                        <a routerLink="/about">О сайте</a>
+                        <a routerLink="">Home</a>
+                        <a routerLink="/about">About Site</a>
                     </nav>
                     <div  class="form-group">
-                        <h3>Параметры объекта</h3>
-                        <input type="number" [(ngModel)]="item.id" class="form-control" placeholder="Номер модели"/><br />
-                        <input type="number" [(ngModel)]="item.price" class="form-control" placeholder="Цена" /><br />
-                        <input [(ngModel)]="item.product" class="form-control" placeholder="Товар" /><br />
-                        <button (click)="goToItem(item)" class="btn">Перейти</button>
+                        <h3>Object Parameters</h3>
+                        <input type="number" [(ngModel)]="item.id" class="form-control" placeholder="Model Number"/><br />
+                        <input type="number" [(ngModel)]="item.price" class="form-control" placeholder="Price" /><br />
+                        <input [(ngModel)]="item.product" class="form-control" placeholder="Production" /><br />
+                        <button (click)="goToItem(item)" class="btn">GO</button>
                     </div>
                     <router-outlet></router-outlet>
                </div>`

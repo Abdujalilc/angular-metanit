@@ -4,9 +4,9 @@ import {Subscription} from 'rxjs';
   
 @Component({
     selector: 'item-info',
-    template: `<h3>Модель {{id}}</h3>
-                <div>Товар: {{product}}</div>
-                <div>Цена: {{price}}</div>`
+    template: `<h3>Model {{id}}</h3>
+                <div>Production: {{product}}</div>
+                <div>Proce: {{price}}</div>`
 })
 export class ItemComponent{ 
      

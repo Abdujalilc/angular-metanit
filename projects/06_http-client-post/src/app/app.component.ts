@@ -13,20 +13,20 @@ import {User} from './user';
                     <input class="form-control" type="number" name="age" [(ngModel)]="user.age" />
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-default" (click)="submit(user)">Отправить</button>
+                    <button class="btn btn-default" (click)="submit(user)">Send</button>
                 </div>
                 <div *ngIf="done">
-                    <div>Получено от сервера:</div>
-                    <div>Имя: {{receivedUser?.name}}</div>
-                    <div>Возраст: {{receivedUser?.age}}</div>
+                    <div>Received from Server:</div>
+                    <div>Name: {{receivedUser?.name}}</div>
+                    <div>Age: {{receivedUser?.age}}</div>
                 </div>`,
     providers: [HttpService]
 })
 export class AppComponent { 
    
-    user: User=new User("", 0); // данные вводимого пользователя
+    user: User=new User("", 0);
        
-    receivedUser: User | undefined; // полученный пользователь
+    receivedUser: User | undefined;
     done: boolean = false;
     constructor(private httpService: HttpService){}
     submit(user: User){
