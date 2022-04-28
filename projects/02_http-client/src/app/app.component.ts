@@ -5,8 +5,8 @@ import { User } from './user';
 @Component({
   selector: 'my-app',
   template: `<div>
-    <p>Имя пользователя: {{ user?.name }}</p>
-    <p>Возраст пользователя: {{ user?.age }}</p>
+    <p>User name: {{ user?.name }}</p>
+    <p>User age: {{ user?.age }}</p>
   </div>`,
 })
 export class AppComponent implements OnInit {

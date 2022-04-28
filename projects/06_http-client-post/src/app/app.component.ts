@@ -10,12 +10,7 @@ import { User } from './user';
     </div>
     <div class="form-group">
       <label>Age</label>
-      <input
-        class="form-control"
-        type="number"
-        name="age"
-        [(ngModel)]="user.age"
-      />
+      <input class="form-control" type="number" name="age" [(ngModel)]="user.age" />
     </div>
     <div class="form-group">
       <button class="btn btn-default" (click)="submit(user)">Send</button>

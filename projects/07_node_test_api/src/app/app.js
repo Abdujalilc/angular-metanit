@@ -11,12 +11,10 @@ app.use(function(req, res, next) {
    next(); 
  });
 
- app.get("/sum", function(request, response){
-       
+ app.get("/sum", function(request, response){       
   
   const number1 = parseInt(request.query.num1);
   const number2 = parseInt(request.query.num2);
-
  
   const sum = number1 + number2;
    
@@ -27,11 +25,9 @@ app.use(function(req, res, next) {
   response.send({result: sum});
 }); 
 
-app.post("/postuser", jsonParser, function (request, response) {
- 
+app.post("/postuser", jsonParser, function (request, response) { 
    
-    if(!request.body) return response.sendStatus(400);
-     
+    if(!request.body) return response.sendStatus(400);     
    
     let username = request.body.name;
     let userage = request.body.age;

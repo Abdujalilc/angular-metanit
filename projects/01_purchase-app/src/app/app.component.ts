@@ -15,33 +15,24 @@ class Item {
 @Component({
   selector: 'purchase-app',
   template: `<div class="page-header">
-      <h1>Список покупок</h1>
+      <h1>List of Purchases</h1>
     </div>
     <div class="panel">
       <div class="form-inline">
         <div class="form-group">
           <div class="col-md-8">
-            <input
-              class="form-control"
-              [(ngModel)]="text"
-              placeholder="Название"
-            />
+            <input class="form-control" [(ngModel)]="text" placeholder="Name" />
           </div>
         </div>
         <div class="form-group">
           <div class="col-md-6">
-            <input
-              type="number"
-              class="form-control"
-              [(ngModel)]="price"
-              placeholder="Цена"
-            />
+            <input type="number" class="form-control" [(ngModel)]="price" placeholder="Price" />
           </div>
         </div>
         <div class="form-group">
           <div class="col-md-offset-2 col-md-8">
             <button class="btn btn-default" (click)="addItem(text, price)">
-              Добавить
+              Add
             </button>
           </div>
         </div>
@@ -49,9 +40,9 @@ class Item {
       <table class="table table-striped">
         <thead>
           <tr>
-            <th>Предмет</th>
-            <th>Цена</th>
-            <th>Куплено</th>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Purchased</th>
           </tr>
         </thead>
         <tbody>
@@ -65,14 +56,14 @@ class Item {
     </div>`,
 })
 export class AppComponent {
-  text: string = '';
-  price: number = 0;
+  text: string ;
+  price: number;
 
   items: Item[] = [
-    { purchase: 'Хлеб', done: false, price: 15.9 },
-    { purchase: 'Масло', done: false, price: 60 },
-    { purchase: 'Картофель', done: true, price: 22.6 },
-    { purchase: 'Сыр', done: false, price: 310 },
+    { purchase: 'Bread', done: true, price: 15.9 },
+    { purchase: 'Oil', done: false, price: 60 },
+    { purchase: 'Potatoes', done: true, price: 22.6 },
+    { purchase: 'Cheese', done: false, price: 310 },
   ];
   addItem(text: string, price: number): void {
     if (text == null || text.trim() == '' || price == null) return;

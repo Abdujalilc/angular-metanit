@@ -2,11 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 export class Item {
-  constructor(
-    public id: number,
-    public product: string,
-    public price: number
-  ) {}
+  constructor( public id: number, public product: string, public price: number ) {}
 }
 
 @Component({
@@ -18,23 +14,9 @@ export class Item {
     </nav>
     <div class="form-group">
       <h3>Object Parameters</h3>
-      <input
-        type="number"
-        [(ngModel)]="item.id"
-        class="form-control"
-        placeholder="Model Number"
-      /><br />
-      <input
-        type="number"
-        [(ngModel)]="item.price"
-        class="form-control"
-        placeholder="Price"
-      /><br />
-      <input
-        [(ngModel)]="item.product"
-        class="form-control"
-        placeholder="Production"
-      /><br />
+      <input type="number" [(ngModel)]="item.id" class="form-control" placeholder="Model Number" /><br />
+      <input type="number" [(ngModel)]="item.price" class="form-control" placeholder="Price" /><br />
+      <input [(ngModel)]="item.product" class="form-control" placeholder="Production" /><br />
       <button (click)="goToItem(item)" class="btn">GO</button>
     </div>
     <router-outlet></router-outlet>

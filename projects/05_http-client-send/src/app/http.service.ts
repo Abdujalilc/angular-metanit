@@ -5,9 +5,9 @@ import { User } from './user';
 export class HttpService {
   constructor(private http: HttpClient) {}
 
-  /*getSum(num1: number, num2: number){
+  getSumSimple(num1: number, num2: number){
         return this.http.get('http://localhost:3000/sum?num1=' + num1 + "&num2=" + num2);
-    }*/
+    }
 
   getSum(num1: number, num2: number) {
     const params = new HttpParams()

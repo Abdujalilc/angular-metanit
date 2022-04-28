@@ -7,8 +7,8 @@ import { User } from './user';
   template: `<div>{{ this.httpService.errorMessage }}</div>
     <ul>
       <li *ngFor="let user of users">
-        <p>Имя пользователя: {{ user?.name }}</p>
-        <p>Возраст пользователя: {{ user?.age }}</p>
+        <p>User name: {{ user?.name }}</p>
+        <p>User age: {{ user?.age }}</p>
       </li>
     </ul>`,
   providers: [HttpService],
