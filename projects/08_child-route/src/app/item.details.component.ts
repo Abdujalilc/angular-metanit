@@ -1,7 +1,7 @@
-import { Component} from '@angular/core';
-  
+import { Component } from '@angular/core';
+
 @Component({
-    selector: 'item-details',
-    template: `<h3>Production Information</h3>`
+  selector: 'item-details',
+  template: `<h3>Production Information</h3>`,
 })
-export class ItemDetailsComponent{}
+export class ItemDetailsComponent {}

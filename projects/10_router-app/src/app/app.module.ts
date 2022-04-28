@@ -9,24 +9,25 @@ import { AboutComponent } from './about.component';
 import { HomeComponent } from './home.component';
 import { NotFoundComponent } from './not-found.component';
 
-
 import { ItemComponent } from './item.component';
 
 // определение маршрутов
 const appRoutes: Routes = [
-    { path: '', component: HomeComponent },
-    { path: 'about', component: AboutComponent },
-    { path: 'item/:id', component: ItemComponent },
-    { path: '**', component: NotFoundComponent }
+  { path: '', component: HomeComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'item/:id', component: ItemComponent },
+  { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({
-    imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes)],
-    declarations: [
-        AppComponent, HomeComponent,
-        AboutComponent, NotFoundComponent,
-        ItemComponent
-    ],
-    bootstrap: [AppComponent]
+  imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes)],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    AboutComponent,
+    NotFoundComponent,
+    ItemComponent,
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
